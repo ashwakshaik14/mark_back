@@ -4,8 +4,10 @@ const cors = require('cors'); // ✅ import cors
 const app = express();
 const PORT = 5000;
 
-app.use(cors()); // ✅ enable CORS
-
+app.use(cors({
+    origin: 'https://mark-v5jx.onrender.com'
+  }));
+  
 const user = JSON.parse(fs.readFileSync('./users.json', 'utf-8'));
 const totalUsers = user.length;
 
